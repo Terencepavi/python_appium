@@ -25,5 +25,18 @@ class AppiumConfig:
 
 class TestAndroidDeviceLocal(AppiumConfig):
     def test_invalid_login(self):
-        print(self.driver.page_source)
-        time.sleep(2)
+        self.driver.find_element(AppiumBy.XPATH, "//android.widget.TextView[@text='Dismiss']").click()
+        self.driver.find_element(AppiumBy.XPATH, "//android.widget.TextView[@text='Sign in']").click()
+        self.driver.find_element(AppiumBy.XPATH, "//android.widget.TextView[@text='Sign in']").click()
+        self.driver.find_element(AppiumBy.XPATH,
+                            "//android.widget.EditText[@content-desc='Enter an e-mail address or username']").send_keys(
+            "captain")
+        self.driver.find_element(AppiumBy.XPATH, "//android.widget.EditText[contains(@content-desc,'Pass')]").send_keys(
+            "jack")
+        # click on sign in
+        self.driver.find_element(AppiumBy.XPATH, "(//android.widget.TextView[@text='Sign in'])[2]").click()
+        # get the text "There was an issue signing in" and print it
+        actual_error = self.driver.find_element(AppiumBy.XPATH, "//*[contains(@text,'issue')]").text
+        print(actual_error)
+        actual_error = self.driver.find_element(AppiumBy.XPATH, "//*[contains(@text,'issue')]").get_attribute("text")
+        print(actual_error)

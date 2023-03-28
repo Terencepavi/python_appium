@@ -13,7 +13,7 @@ class AppiumConfig:
         des_cap = {
             "platformName": "android",
             "deviceName": "oneplus",
-            "app": r"C:\Components\khan-academy-7-3-2.apk",
+            "app": r"C:\APK\khan-academy-7-3-2.apk",
         }
         self.driver = webdriver.Remote(command_executor="http://localhost:4723/wd/hub", desired_capabilities=des_cap)
         self.driver.implicitly_wait(30)

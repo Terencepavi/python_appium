@@ -11,7 +11,7 @@ class AppiumConfig:
         des_cap = {
             "platformName": "android",
             "deviceName": "oneplus",
-            "app": r"C:\Components\khan-academy-7-3-2.apk",
+            "app": r"C:\APK\khan-academy-7-3-2.apk",
             # "udid":"emulator-5554"
         }
 
@@ -27,9 +27,9 @@ class TestAndroidDeviceLocal(AppiumConfig):
         self.driver.find_element(AppiumBy.XPATH, "//android.widget.TextView[@text='Sign in']").click()
         self.driver.find_element(AppiumBy.XPATH,
                             "//android.widget.EditText[@content-desc='Enter an e-mail address or username']").send_keys(
-            "dina")
+            "john")
         self.driver.find_element(AppiumBy.XPATH, "//android.widget.EditText[contains(@content-desc,'Pass')]").send_keys(
-            "dina123")
+            "wick")
         # click on sign in
         self.driver.find_element(AppiumBy.XPATH, "(//android.widget.TextView[@text='Sign in'])[2]").click()
         # get the text "There was an issue signing in" and print it

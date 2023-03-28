@@ -11,7 +11,7 @@ class AppiumConfig:
         des_cap = {
             "platformName": "android",
             "deviceName": "oneplus",
-            "app": r"C:\Components\khan-academy-7-3-2.apk",
+            "app": r"C:\APK\khan-academy-7-3-2.apk",
         }
         self.driver = webdriver.Remote(command_executor="http://localhost:4723/wd/hub", desired_capabilities=des_cap)
         self.driver.implicitly_wait(30)
@@ -25,11 +25,11 @@ class TestLogin(AppiumConfig):
         self.driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'UiSelector().text("Sign in")').click()
         self.driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'UiSelector().text("Sign in")').click()
 
-        self.driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR,'UiSelector().descriptionContains("e-mail address")').send_keys("dina")
+        self.driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR,'UiSelector().descriptionContains("e-mail address")').send_keys("pavi")
 
         #convert below xpath to ANDROID_UIAUTOMATOR
         self.driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR,'UiSelector().descriptionContains("pass")').send_keys(
-            "dina123")
+            "pavi1725")
         # click on sign in
         self.driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'UiSelector().text("Sign in").instance(1)').click()
         # get the text "There was an issue signing in" and print it
